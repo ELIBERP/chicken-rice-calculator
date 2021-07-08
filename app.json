@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "chicken-rice-calculator",
+    "slug": "chicken-rice-calculator",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "chicken-rice-calculator"
+}
