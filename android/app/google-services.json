@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "347530102405",
+    "firebase_url": "https://chicken-rice-calculator-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "chicken-rice-calculator",
+    "storage_bucket": "chicken-rice-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347530102405:android:aff0ae1f594198c4364bec",
+        "android_client_info": {
+          "package_name": "chicken.rice.calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347530102405-bhq12cqq4kefih769dongkko7f23u8mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGuPuZ1k18BR8EiHLN8E0xFe0OJI0ljog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347530102405-bhq12cqq4kefih769dongkko7f23u8mc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347530102405:android:b8a9575478040951364bec",
+        "android_client_info": {
+          "package_name": "com.chickenricecalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347530102405-bhq12cqq4kefih769dongkko7f23u8mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGuPuZ1k18BR8EiHLN8E0xFe0OJI0ljog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347530102405-bhq12cqq4kefih769dongkko7f23u8mc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
