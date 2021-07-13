@@ -5,29 +5,31 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Jiro } from 'react-native-textinput-effects';
 import validator from 'validator'; // email validator
 import { MyButton } from '../components/MyButton';
-
-// TouchableOpacity.defaultProps = { activeOpacity: 0.7 };
-
-// const MyButton = ({ onPress, title, size, backgroundColor }) => (
-//     <TouchableOpacity
-//       onPress={onPress}
-//       style={[
-//         styles.appButtonContainer,
-//         size === "sm" && {
-//           paddingHorizontal: 8,
-//           paddingVertical: 6,
-//           elevation: 6
-//         },
-//         backgroundColor && { backgroundColor }
-//       ]}
-//     >
-//         <Text style={[styles.appButtonText, size === "sm" && { fontSize: 14 }]}>
-//             {title}
-//         </Text>
-//     </TouchableOpacity>
-// );
+import database from '@react-native-firebase/database';
 
 function login({navigation}) {
+
+    const [emailInput, onChangeEmailInput] = React.useState('');
+    const [passwordInput, onChangePasswordInput] = React.useState('');
+
+    async function checkLogin() {
+        const DATA = await database()
+            .ref(`/users/${emailInput}/password`)
+            .once('value')
+            .then(snapshot => {
+                // console.log(snapshot.val());
+                return snapshot.val();
+            });;
+
+        if (DATA == null) {
+            alert('Email does not exist!')
+        } else if( DATA === passwordInput) {
+            navigation.navigate('home');
+        } else {
+            alert(' WRONG USERNAME OR PASSWORD! ')
+        }
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.Text}>Log In</Text>
@@ -39,6 +41,8 @@ function login({navigation}) {
                     borderColor={'#aee2c9'}
                     inputPadding={16}
                     inputStyle={{ color: 'white' }}
+                    onChangeText={(emailInput) => onChangeEmailInput(emailInput)}
+                    value={emailInput}
                 />
             </ View>
 
@@ -49,11 +53,13 @@ function login({navigation}) {
                     inputPadding={16}
                     inputStyle={{ color: 'white' }}
                     secureTextEntry={true}
+                    onChangeText={(passwordInput) => onChangePasswordInput(passwordInput)}
+                    value={passwordInput}
                 />
             </View>
 
             <View style={styles.itemContainer}>
-                <MyButton onPress={() => navigation.navigate('home')} title="I want chicken rice!" size="sm" backgroundColor="#aee2c9" />
+                <MyButton onPress={checkLogin.bind(this)} title="I want chicken rice!" size="sm" backgroundColor="#aee2c9" />
             </View>
             
         </View>
