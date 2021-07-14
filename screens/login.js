@@ -68,8 +68,8 @@ function login({navigation}) {
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: 'center',
+        flex: 1,
+        justifyContent: 'center',
     },
     itemContainer: {
         marginTop: 20,
