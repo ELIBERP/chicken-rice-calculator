@@ -8,16 +8,15 @@ import { MyButton } from '../components/MyButton';
 import database from '@react-native-firebase/database';
 
 function login({navigation}) {
-
     const [emailInput, onChangeEmailInput] = React.useState('');
     const [passwordInput, onChangePasswordInput] = React.useState('');
 
     async function checkLogin() {
         const DATA = await database()
-            .ref(`/users/${emailInput}/password`)
+            .ref(`/${emailInput}/password`)
             .once('value')
             .then(snapshot => {
-                // console.log(snapshot.val());
+                console.log("login " + snapshot.val())
                 return snapshot.val();
             });;
 
@@ -62,6 +61,11 @@ function login({navigation}) {
                 <MyButton onPress={checkLogin.bind(this)} title="I want chicken rice!" size="sm" backgroundColor="#aee2c9" />
             </View>
             
+
+            <TouchableOpacity onPress={() => navigation.navigate('register')}>
+                <Text style={styles.Text2}>Register Here</Text>
+            </TouchableOpacity>
+
         </View>
     )
 }
@@ -79,6 +83,10 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         fontWeight: 'bold',
         fontSize: 36,
+    },
+    Text2: {
+        paddingTop: 15,
+        alignSelf: "center",
     },
     appButtonContainer: {
         elevation: 8,
