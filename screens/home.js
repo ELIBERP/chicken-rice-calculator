@@ -21,6 +21,10 @@ function home() {
             return alert("No Input")
         }
 
+        if (modCredit > 6 || modGradePoints > 4) {
+            return alert("Invalid Range")
+        }
+
         var insertMod = {"modCredit": modCredit, "modGradePoints": modGradePoints};
         var updatedModArr = [insertMod, ...modules]
         setModules(updatedModArr); 
@@ -37,24 +41,19 @@ function home() {
         var grade = 0;
         var totalGPA = 0;
         var totalGPAdecimal = 0;
+        var totalDecimal = 0;
 
         for (var i = 0; i < modules.length; i++) {
             credit = parseInt(modules[i].modCredit);
             grade = parseInt(modules[i].modGradePoints);
 
             totalModCredits += (grade * credit);
-            totalGradePoints += grade;
+            totalGradePoints += credit;
         }
 
-        totalGPA = totalModCredits/totalGradePoints;
-        totalGPAdecimal = (totalGPA/4)*100
-        setProgressRingData(totalGPAdecimal);
-
-        if (totalGPAdecimal > 3.5) {
-            setR(66)
-            setG(18)
-            setB(224)
-        }
+        totalGPA = (totalModCredits/totalGradePoints);
+        totalDecimal = (totalGPA/4);
+        setProgressRingData(totalDecimal);
         return setculmulativeGPA(totalGPA.toFixed(2));
     }
 
