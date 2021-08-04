@@ -19,6 +19,7 @@
     "react-dom": "16.13.1",
     "react-native": "0.63.4",
     "react-native-chart-kit": "^6.11.0",
+    "react-native-easy-grid": "^0.2.2",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-input-style": "^1.0.2",
     "react-native-reanimated": "~2.2.0",
@@ -27,6 +28,7 @@
     "react-native-svg": "^12.1.1",
     "react-native-textinput-effects": "^0.6.2",
     "react-native-unimodules": "~0.14.5",
+    "react-native-vector-icons": "^8.1.0",
     "react-native-web": "~0.13.12",
     "validator": "^13.6.0"
   },
