@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet} from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 const MyCard = (props) => {
     return (
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         marginHorizontal: 20,
         marginVertical: 10,
-        height: 300,
     },
     cardContent: {
         marginHorizontal: 25,
