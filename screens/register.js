@@ -5,24 +5,42 @@ import { MyButton } from '../components/MyButton';
 import database from '@react-native-firebase/database';
 
 function register({navigation}) {
-    const [emailInput, onChangeEmailInput] = React.useState('');
+    const [usernameInput, onChangeUsernameInput] = React.useState('');
     const [passwordInput, onChangePasswordInput] = React.useState('');
     const [repeatPasswordInput, onChangeRepeatPasswordInput] = React.useState('');
 
     async function register () {
+        if (usernameInput == null || passwordInput == null || repeatPasswordInput == null || usernameInput === "" || passwordInput === "" || repeatPasswordInput === "") {
+            return alert("Please fill all the fields!")
+        }
         if (passwordInput != repeatPasswordInput) {
-            alert("Passwords do not match");
+            return alert("Passwords do not match");
         }
 
+        const checkingUsername = await database()
+        .ref(`/${usernameInput}`)
+        .once('value')
+        .then(snapshot => {
+            // console.log("login " + snapshot.val())
+            return snapshot.val();
+        });;
+
+        if (checkingUsername != null) {
+            return alert(`Username already exist! \nTry a different username`)
+        } 
+
         const DATA = await database()
-            .ref(`/${emailInput}`)
+            .ref(`/${usernameInput}`)
             .set({
                 password: passwordInput,
             })
             .then(() => {return "success"});
 
-        if (DATA === "Data set.") {
+        if (DATA === "success") {
             alert("Account created successfully!")
+            onChangeUsernameInput(null);
+            onChangePasswordInput(null);
+            onChangeRepeatPasswordInput(null);
             navigation.navigate('login');
         }
     }
@@ -34,12 +52,12 @@ function register({navigation}) {
 
             <View>
                 <Jiro
-                    label={'Email'}
+                    label={'Username'}
                     borderColor={'#aee2c9'}
                     inputPadding={16}
                     inputStyle={{ color: 'white' }}
-                    onChangeText={(emailInput) => onChangeEmailInput(emailInput)}
-                    value={emailInput}
+                    onChangeText={(usernameInput) => onChangeUsernameInput(usernameInput)}
+                    value={usernameInput}
                 />
             </View>
 

@@ -6,14 +6,21 @@ const MyModule = (props) => {
     return (
         <MyCard>
             <View style={styles.container}>
+                <View>
+                    <Text style={styles.itemTitle}>
+                    {props.modName}
+                    </Text>
+                </View>
 
-                <Text style={styles.viewContainer}>
-                    Module Credits: {props.modCredit}
-                </Text>
+                <View style={styles.itemContainer}>
+                    <Text style={styles.viewContainer}>
+                        Module Credits: {props.modCredit}
+                    </Text>
 
-                <Text style={styles.viewContainer}>
-                    Grade Points: {props.modGradePoint}
-                </Text>
+                    <Text style={styles.viewContainer}>
+                        Grade Points: {props.modGradePoint}
+                    </Text>
+                </View>
 
             </View>
         </MyCard>
@@ -23,12 +30,19 @@ const MyModule = (props) => {
 const styles = StyleSheet.create({
     container: {
         alignSelf: "center",
-        flexDirection: 'row',
     }, viewContainer: {
         textAlign: 'center',
         alignSelf: 'center',
         width: '50%',
+    }, itemTitle: {
+        textAlign: 'left',
+        alignSelf: 'center',
+        fontWeight: 'bold',
+        fontSize: 20,
+    }, itemContainer: {
+        flexDirection: 'row',
     }
+
 })
 
 export { MyModule }
