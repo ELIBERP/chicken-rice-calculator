@@ -1,23 +1,19 @@
-enter mod credit + mod point
-push mod credit + mod point into object within application
-mod credit + mod point, print onto screen
-calculate gpa and update ring
-
-+ register as 2nd api and add to firebase 
-(firebase only username and passwords)
-
 # CHICKEN RICE CALCULATOR
 What chicken rice can your gpa buy?
 
-## To Do
-1. REGISTER - email input sanitisation, password input sanitisation
-2. HOME
-    - Input Boxes - 1 mod credit, 2 mod grade point
-    - Add mod credit and mod grade point into an object
-    - Calculate gpa
-    - Print gpa in ring
+## SET UP
+To run apk:
+Emulator:
+1. Ensure you are in the chicken-rice-calculator in your terminal, otherwise cd into chicken-rice-calculator
+2. Run npm install
+3. Open up the android app located inside the chicken-rice-calculator folder inside android studio
+4. Once app is fully loaded, selected an emulator to open the app on
+5. Run 'app'
 
-## Progress
-1. Can login
-2. Can register
-3. Can print progress ring
+Emulator (apk):
+1. Go to android > app > build > outputs > apk > debug > app-debug.apk
+2. Drag apk onto emulator phone
+
+Phone (Android Only):
+1. Go to https://drive.google.com/file/d/1fk6kt7aI7iQ9WqNQFRxyKr_ZBz_X57Wx/view?usp=sharing and download the apk
+2. Run the apk on your phone
