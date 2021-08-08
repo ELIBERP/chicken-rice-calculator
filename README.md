@@ -1,4 +1,4 @@
-# CHICKEN RICE CALCULATOR
+# CHICKEN RICE CALCULATOR 🐔🍚
 What chicken rice can your gpa buy?
 
 ## SET UP
